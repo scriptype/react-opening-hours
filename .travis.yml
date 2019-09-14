@@ -9,8 +9,7 @@ cache:
   directories:
   - node_modules
 before_script:
-  - yarn serve
-  - sleep 3
+  - yarn serve &
 script:
   - yarn build
   - CI=true yarn test
