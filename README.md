@@ -1,5 +1,7 @@
 # React Opening Hours
 
+![Travis Badge](https://api.travis-ci.org/scriptype/react-opening-hours.svg)
+
 This project is built with CRA boilerplate.
 
 Readme to be improved.
