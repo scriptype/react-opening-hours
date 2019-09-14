@@ -8,6 +8,10 @@ install:
 cache:
   directories:
   - node_modules
+before_script:
+  - yarn serve
+  - sleep 3
 script:
+  - yarn build
   - CI=true yarn test
   - yarn test:e2e
