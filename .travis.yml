@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- 10.16.3
+install:
+- yarn install
+cache:
+  directories:
+  - node_modules
+script:
+  - CI=true yarn test
+  - yarn test:e2e
