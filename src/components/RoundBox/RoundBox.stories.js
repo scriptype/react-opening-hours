@@ -1,5 +1,6 @@
 import React from 'react'
 import RoundBox from '.'
+import { H1, P } from '../Typography'
 
 export const empty = () => (
   <RoundBox></RoundBox>
@@ -12,11 +13,11 @@ export const withInlineLevelChildren = () => (
 export const withBlockLevelChildren = () => (
   <RoundBox>
     <header>
-      <h1>My Box Title</h1>
+      <H1>My Box Title</H1>
     </header>
     <main>
-      <p>Sit suscipit dolore dolorum rem quas Corporis illo expedita nobis veritatis quisquam.</p>
-      <p>Excepturi facilis esse odit odio cum iure? Dolores dolorem natus non rem quod, tenetur repudiandae Repellat ipsum nobis?</p>
+      <P>Sit suscipit dolore dolorum rem quas Corporis illo expedita nobis veritatis quisquam.</P>
+      <P>Excepturi facilis esse odit odio cum iure? Dolores dolorem natus non rem quod, tenetur repudiandae Repellat ipsum nobis?</P>
     </main>
   </RoundBox>
 )
