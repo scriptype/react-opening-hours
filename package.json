@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:api": "nodemon api",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:e2e": "nightwatch",
@@ -41,6 +44,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.1",
     "http-server": "^0.11.1",
-    "nightwatch": "^1.2.2"
+    "nightwatch": "^1.2.2",
+    "nodemon": "^1.19.2"
   }
 }

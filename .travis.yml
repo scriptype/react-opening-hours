@@ -9,7 +9,7 @@ cache:
   directories:
   - node_modules
 before_script:
-  - yarn serve &
+  - yarn serve & yarn start:api &
 script:
   - yarn build
   - CI=true yarn test
