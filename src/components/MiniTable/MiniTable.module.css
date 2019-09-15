@@ -1,0 +1,24 @@
+.table {
+    width: 400px;
+}
+
+.table.is-liquid {
+    width: 100%;
+}
+
+.row {
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.cell {
+    height: 24px;
+    padding: 5px 0;
+}
+
+.labelCell {
+    font-weight: 500;
+}
+
+.valueCell {
+    text-align: right;
+}
