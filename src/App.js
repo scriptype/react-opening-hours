@@ -25,7 +25,7 @@ function App() {
         >
           Learn React
         </a>
-        <pre>{place.description}</pre>
+        <pre data-test-name="place-description">{place.description}</pre>
       </header>
     </div>
   )
