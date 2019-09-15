@@ -17,7 +17,9 @@
     "test:e2e": "nightwatch",
     "eject": "react-scripts eject",
     "lint": "eslint src",
-    "serve": "http-server build -p 3000"
+    "serve": "http-server build -p 3000",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,6 +37,12 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^5.2.0",
+    "@storybook/addon-actions": "^5.2.0",
+    "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-links": "^5.2.0",
+    "@storybook/addons": "^5.2.0",
+    "@storybook/react": "^5.2.0",
     "chromedriver": "^76.0.1",
     "eslint": "^6.4.0",
     "eslint-config-standard": "^14.1.0",
