@@ -1,5 +1,6 @@
 @import "./reset.css";
 @import "./fonts.css";
+@import "./colors.css";
 
 body {
     font: normal 16px/1.5 "Roboto", sans-serif;
