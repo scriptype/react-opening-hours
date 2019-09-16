@@ -1,4 +1,5 @@
 import React from 'react'
+import Center from '../Center'
 import MiniTable from '.'
 import { H1 } from '../Typography'
 
@@ -46,16 +47,24 @@ const data = [
 ]
 
 export const basic = () => (
-  <MiniTable title="Basic Table" data={data} />
+  <Center>
+    <MiniTable title="Basic Table" data={data} />
+  </Center>
 )
 
 export const dynamicCaption = () => (
-  <MiniTable title={<H1>Table Caption with H1</H1>} data={data} />
+  <Center>
+    <MiniTable title={<H1>Table Caption with H1</H1>} data={data} />
+  </Center>
 )
 
 export const liquidLayout = () => {
   const modifiers = {
     isLiquid: true
   }
-  return <MiniTable title="Liquid Table" data={data} modifiers={modifiers} />
+  return (
+    <Center>
+      <MiniTable title="Liquid Table" data={data} modifiers={modifiers} />
+    </Center>
+  )
 }

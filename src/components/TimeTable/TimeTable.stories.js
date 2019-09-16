@@ -1,4 +1,5 @@
 import React from 'react'
+import Center from '../Center'
 import TimeTable from '.'
 
 export const openingHours = () => {
@@ -11,5 +12,9 @@ export const openingHours = () => {
     { label: 'Saturday', value: '10 AM - 1 AM' },
     { label: 'Sunday', value: '12 PM - 9 PM' }
   ]
-  return <TimeTable title="Opening hours" data={data} />
+  return (
+    <Center>
+      <TimeTable title="Opening hours" data={data} />
+    </Center>
+  )
 }
