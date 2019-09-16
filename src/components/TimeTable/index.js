@@ -9,7 +9,7 @@ function Headline(content) {
   return (
     <div className={css.headline}>
       <TimeIcon className={css.icon} />
-      <H1>{content}</H1>
+      <H1 className={css.title}>{content}</H1>
     </div>
   )
 }

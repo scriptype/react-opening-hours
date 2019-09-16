@@ -12,6 +12,12 @@
 .icon {
     margin-right: 16px;
     color: var(--color-grey-3);
+    width: 24px;
+    height: 24px;
+}
+
+.title {
+    font-size: 31px;
 }
 
 .label-decorator {
@@ -22,4 +28,5 @@
 
 .value-decorator {
     color: var(--color-grey-3);
+    font-weight: 300;
 }

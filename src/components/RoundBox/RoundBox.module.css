@@ -1,6 +1,6 @@
 .container {
     display: inline-block;
-    padding: 40px;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, .1);
-    border-radius: 20px;
+    padding: 44px;
+    box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, .1);
+    border-radius: 16px;
 }
