@@ -6,6 +6,11 @@
     width: 100%;
 }
 
+.caption {
+    text-align: left;
+    border-bottom: 2px solid #202125;
+}
+
 .row {
     border-bottom: 1px solid #f8f8f8;
 }

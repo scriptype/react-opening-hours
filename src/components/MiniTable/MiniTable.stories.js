@@ -1,5 +1,6 @@
 import React from 'react'
 import MiniTable from '.'
+import { H1 } from '../Typography'
 
 const data = [
   {
@@ -45,12 +46,16 @@ const data = [
 ]
 
 export const basic = () => (
-  <MiniTable data={data} />
+  <MiniTable title="Basic Table" data={data} />
+)
+
+export const dynamicCaption = () => (
+  <MiniTable title={<H1>Table Caption with H1</H1>} data={data} />
 )
 
 export const liquidLayout = () => {
   const modifiers = {
     isLiquid: true
   }
-  return <MiniTable data={data} modifiers={modifiers} />
+  return <MiniTable title="Liquid Table" data={data} modifiers={modifiers} />
 }
