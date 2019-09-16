@@ -16,7 +16,7 @@
 }
 
 .cell {
-    min-height: 46px;
+    height: 26px;
     padding: 10px 0;
     font-size: 18px;
 }
