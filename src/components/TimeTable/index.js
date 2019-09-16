@@ -39,7 +39,7 @@ function decorateData(data) {
   })
 }
 
-function TimeTable({ title, data }) {
+function TimeTable({ title, data = [] }) {
   const decoratedData = decorateData(data)
   return (
     <RoundBox>
