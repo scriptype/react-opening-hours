@@ -1,0 +1,25 @@
+.headline {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.headline * {
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    margin-right: 16px;
+    color: var(--color-grey-3);
+}
+
+.label-decorator {
+    color: var(--color-green);
+    font-variant: all-small-caps;
+    margin-left: 10px;
+}
+
+.value-decorator {
+    color: var(--color-grey-3);
+}
