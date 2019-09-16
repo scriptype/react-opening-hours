@@ -8,11 +8,11 @@
 
 .caption {
     text-align: left;
-    border-bottom: 2px solid #202125;
+    border-bottom: 2px solid var(--color-black);
 }
 
 .row {
-    border-bottom: 1px solid #f8f8f8;
+    border-bottom: 1px solid var(--color-grey-1);
 }
 
 .cell {

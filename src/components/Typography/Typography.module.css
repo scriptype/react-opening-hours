@@ -34,6 +34,6 @@
 }
 
 .dark {
-    background: #202125;
-    color: #5BCB02;
+    background: var(--color-black);
+    color: var(--color-green);
 }
