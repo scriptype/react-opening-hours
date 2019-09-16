@@ -1,8 +1,8 @@
 import React from 'react'
 import css from './Typography.module.css'
 
-function H1({ children, dark, ...restProps }) {
-  const classNames = [css.h1]
+function H1({ children, className = '', dark, ...restProps }) {
+  const classNames = [css.h1, className]
   if (dark) {
     classNames.push(css.dark)
   }
@@ -13,8 +13,8 @@ function H1({ children, dark, ...restProps }) {
   )
 }
 
-function H2({ children, dark, ...restProps }) {
-  const classNames = [css.h2]
+function H2({ children, className = '', dark, ...restProps }) {
+  const classNames = [css.h2, className]
   if (dark) {
     classNames.push(css.dark)
   }
@@ -25,8 +25,8 @@ function H2({ children, dark, ...restProps }) {
   )
 }
 
-function H3({ children, dark, ...restProps }) {
-  const classNames = [css.h3]
+function H3({ children, className = '', dark, ...restProps }) {
+  const classNames = [css.h3, className]
   if (dark) {
     classNames.push(css.dark)
   }
@@ -37,8 +37,8 @@ function H3({ children, dark, ...restProps }) {
   )
 }
 
-function H4({ children, dark, ...restProps }) {
-  const classNames = [css.h4]
+function H4({ children, className = '', dark, ...restProps }) {
+  const classNames = [css.h4, className]
   if (dark) {
     classNames.push(css.dark)
   }
@@ -49,8 +49,8 @@ function H4({ children, dark, ...restProps }) {
   )
 }
 
-function P({ children, dark, ...restProps }) {
-  const classNames = [css.p]
+function P({ children, className = '', dark, ...restProps }) {
+  const classNames = [css.p, className]
   if (dark) {
     classNames.push(css.dark)
   }
