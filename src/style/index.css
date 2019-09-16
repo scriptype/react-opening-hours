@@ -4,4 +4,5 @@
 
 body {
     font: normal 16px/1.5 "Roboto", sans-serif;
+    color: var(--color-black);
 }
