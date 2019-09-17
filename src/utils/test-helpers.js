@@ -9,10 +9,11 @@ function createTestHelpers(expect, it, document) {
       ReactDOM.unmountComponentAtNode(div)
     },
 
-    hasDarkMode(Component, darkClassName) {
+    rendersChildren(Component) {
       const div = document.createElement('div')
-      ReactDOM.render(<Component dark={true} />, div)
-      expect(div.querySelector(darkClassName)).toBeTruthy()
+      const child = <span id="child">child</span>
+      ReactDOM.render(<Component>{child}</Component>, div)
+      expect(div.querySelector('#child')).toBeTruthy()
       ReactDOM.unmountComponentAtNode(div)
     },
 
@@ -21,6 +22,13 @@ function createTestHelpers(expect, it, document) {
       ReactDOM.render(<Component id="lorem" className="ipsum" />, div)
       const selector = '#lorem.ipsum'
       expect(div.querySelector(selector)).toBeTruthy()
+      ReactDOM.unmountComponentAtNode(div)
+    },
+
+    hasDarkMode(Component, darkClassName) {
+      const div = document.createElement('div')
+      ReactDOM.render(<Component dark={true} />, div)
+      expect(div.querySelector(darkClassName)).toBeTruthy()
       ReactDOM.unmountComponentAtNode(div)
     }
   }
