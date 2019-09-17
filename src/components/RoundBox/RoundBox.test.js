@@ -1,9 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import createTestHelpers from '../../utils/test-helpers'
 import RoundBox from '.'
 
+const helpers = createTestHelpers(expect, it, document)
+
 it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<RoundBox />, div)
-  ReactDOM.unmountComponentAtNode(div)
+  helpers.rendersWithoutCrashing(RoundBox)
+})
+
+it('renders children', () => {
+  helpers.rendersChildren(RoundBox)
 })
