@@ -1,9 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import createTestHelpers from '../../utils/test-helpers'
 import TimeTable from '.'
 
+const helpers = createTestHelpers(expect, it, document)
+
 it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<TimeTable />, div)
-  ReactDOM.unmountComponentAtNode(div)
+  helpers.rendersWithoutCrashing(TimeTable)
 })
