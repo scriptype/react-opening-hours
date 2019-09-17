@@ -21,6 +21,18 @@ it('renders title', () => {
   ReactDOM.unmountComponentAtNode(div)
 })
 
+it('renders dynamic title', () => {
+  const id = `title-${Math.round(Math.random() * 128)}`
+  const props = {
+    title: <span id={id}>My Table</span>
+  }
+  const div = document.createElement('div')
+  ReactDOM.render(<MiniTable {...props} />, div)
+  const caption = div.querySelector(`#${id}`)
+  expect(caption).toBeTruthy()
+  ReactDOM.unmountComponentAtNode(div)
+})
+
 it('renders correct number of rows', () => {
   const props = {
     data: [
