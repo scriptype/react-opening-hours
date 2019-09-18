@@ -1,9 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import createTestHelpers from '../../utils/test-helpers'
 import Center from '.'
 
+const helpers = createTestHelpers(expect, it, document)
+
 it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<Center />, div)
-  ReactDOM.unmountComponentAtNode(div)
+  helpers.rendersWithoutCrashing(Center)
+})
+
+it('renders children', () => {
+  helpers.rendersChildren(Center)
 })
