@@ -1,4 +1,4 @@
-import { mixed, array, object, number, string } from 'yup'
+import { array, object, number, string } from 'yup'
 import Api from '../../lib/api'
 
 const openingHoursDaySchema = array().of(
