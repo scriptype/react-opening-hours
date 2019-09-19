@@ -69,20 +69,21 @@ class PlaceModel {
 
 function parseHours(day, nextDay) {
   return day.reduce((tuples, entry, entryIndex, entries) => {
-    if (entryIndex === 0 && entry.type === 'close')  {
-      return tuples
-    }
     if (entry.type === 'close') {
+      if (entryIndex === 0) {
+        return tuples
+      }
+      // Append entry value to last tuple in tuples
       return Object.assign([], tuples, {
         [tuples.length - 1]: tuples[tuples.length - 1].concat(entry.value)
       })
     }
-    if (entryIndex < entries.length - 1 && entry.type === 'open') {
+    // It's not last entry, just create a new tuple for the day
+    if (entryIndex < entries.length - 1) {
       return tuples.concat([[entry.value]])
     }
-    if (entryIndex === entries.length - 1 && entry.type === 'open') {
-      return tuples.concat([[entry.value, nextDay[0].value]])
-    }
+    // It's the last entry and it's 'open', so find the 'close' in the next day
+    return tuples.concat([[entry.value, nextDay[0].value]])
   }, [])
 }
 
