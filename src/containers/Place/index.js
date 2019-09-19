@@ -9,23 +9,37 @@ function Place({ placeId }) {
 
   useEffect(() => {
     model.setPlace(placeId).then(() => {
-      setPlace(model.parse())
+      setPlace(model.data)
     })
   }, [placeId])
 
   console.log({ place })
 
-  const data = [
-    { label: 'Monday', valueDecorator: 'Closed' },
-    { label: 'Tuesday', valueDecorator: 'Closed' },
-    { label: 'Wednesday', valueDecorator: 'Closed' },
-    { label: 'Thursday', valueDecorator: 'Closed' },
-    { label: 'Friday', valueDecorator: 'Closed' },
-    { label: 'Saturday', valueDecorator: 'Closed' },
-    { label: 'Sunday', valueDecorator: 'Closed' }
-  ]
+  let openingHours
+  if (place.openingHours) {
+    openingHours = place.openingHours.map(day => {
+      const value = day.openingHours.map(h => h.join(' - ')).join(', ')
+      const valueDecorator = value ? '' : 'Closed'
+      return {
+        label: day.label,
+        value,
+        valueDecorator
+      }
+    })
+  } else {
+    openingHours = [
+      { label: 'Monday', valueDecorator: 'Closed' },
+      { label: 'Tuesday', valueDecorator: 'Closed' },
+      { label: 'Wednesday', valueDecorator: 'Closed' },
+      { label: 'Thursday', valueDecorator: 'Closed' },
+      { label: 'Friday', valueDecorator: 'Closed' },
+      { label: 'Saturday', valueDecorator: 'Closed' },
+      { label: 'Sunday', valueDecorator: 'Closed' }
+    ]
+  }
 
-  return <TimeTable title="Opening hours" data={data} />
+
+  return <TimeTable title="Opening hours" data={openingHours} />
 }
 
 export default Place
