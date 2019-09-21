@@ -1,3 +1,13 @@
+.container {
+    width: 100%;
+}
+
+@media (min-width: 345px) {
+    .container {
+        width: 345px;
+    }
+}
+
 .headline {
     display: flex;
     align-items: center;
