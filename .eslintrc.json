@@ -20,7 +20,11 @@
         "react"
     ],
     "rules": {
-      "space-before-function-paren": ["error", "ignore"],
+      "space-before-function-paren": ["error", {
+        "anonymous": "ignore",
+        "named": "ignore",
+        "asyncArrow": "always"
+      }],
       "react/jsx-uses-react": "error",   
       "react/jsx-uses-vars": "error" 
     }
