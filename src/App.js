@@ -5,8 +5,12 @@ function getRandomPlaceId() {
   return Math.round(Math.random() * 500)
 }
 
+function getPlaceId() {
+  return document.location.hash.slice(1) || getRandomPlaceId()
+}
+
 function App() {
-  return <Place placeId={getRandomPlaceId()} />
+  return <Place placeId={getPlaceId()} />
 }
 
 export default App

@@ -22,7 +22,7 @@ function createPlace(id, name) {
   return {
     id,
     name,
-    openingHours: mockOpeningHoursData()
+    openingHours: mockOpeningHoursData(id)
   }
 }
 

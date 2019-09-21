@@ -113,10 +113,7 @@ const collection = [
       { type: 'open', value: 32400 },
       { type: 'close', value: 64800 }
     ],
-    wednesday: [
-      { type: 'open', value: 32400 },
-      { type: 'close', value: 64800 }
-    ],
+    wednesday: [],
     thursday: [
       { type: 'open', value: 32400 },
       { type: 'close', value: 43200 },
@@ -138,7 +135,10 @@ const collection = [
 
 ]
 
-function mockOpeningHoursData() {
+function mockOpeningHoursData(index) {
+  if (typeof index === 'number' && collection[index]) {
+    return collection[index]
+  }
   return collection[floor(random() * collection.length)]
 }
 
