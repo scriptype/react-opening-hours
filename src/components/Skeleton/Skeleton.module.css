@@ -1,0 +1,13 @@
+.text {
+    white-space: pre;
+    font-family: monospace;
+    background: var(--color-grey-1);
+    border-radius: 3px;
+    animation: skeleton-text 2s linear infinite;
+}
+
+@keyframes skeleton-text {
+    50% {
+        background: var(--color-grey-2);
+    }
+}
