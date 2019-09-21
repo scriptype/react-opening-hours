@@ -1,14 +1,14 @@
 import React from 'react'
 import css from './MiniTable.module.css'
 
-function MiniTable({ title, data = [], modifiers = {} }) {
+function MiniTable({ id, title, data = [], modifiers = {} }) {
   const { isLiquid } = modifiers
   const tableClassNames = [css.table]
   if (isLiquid) {
     tableClassNames.push(css['is-liquid'])
   }
   return (
-    <table className={tableClassNames.join(' ')}>
+    <table className={tableClassNames.join(' ')} id={id}>
       {title && (
         <caption className={css.caption}>{title}</caption>
       )}

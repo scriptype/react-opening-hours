@@ -40,7 +40,12 @@ function OpeningHours({ data = [] }) {
     ? formattedOpeningHours
     : createEmptyOpeningHours()
 
-  return <TimeTable title="Opening hours" data={openingHours} />
+  return (
+    <TimeTable
+      id="opening-hours-table"
+      title="Opening hours"
+      data={openingHours} />
+  )
 }
 
 export default OpeningHours

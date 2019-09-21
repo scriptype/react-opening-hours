@@ -46,11 +46,12 @@ function decorateData(data) {
   })
 }
 
-function TimeTable({ title, data = [] }) {
+function TimeTable({ title, data = [], id }) {
   const decoratedData = decorateData(data)
   return (
     <RoundBox className={css.container}>
       <MiniTable
+        id={id}
         modifiers={{ isLiquid: true }}
         title={Headline(title)}
         data={decoratedData} />
