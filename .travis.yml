@@ -12,5 +12,6 @@ before_script:
   - yarn serve & yarn start:api &
 script:
   - yarn build
+  - yarn lint
   - CI=true yarn test
   - yarn test:e2e
