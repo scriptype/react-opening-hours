@@ -30,6 +30,26 @@ class PlaceModel {
     this.schema = placeSchema
   }
 
+  static parseHours(day, nextDay) {
+    return day.reduce((tuples, entry, entryIndex, entries) => {
+      if (entry.type === 'close') {
+        if (entryIndex === 0) {
+          return tuples
+        }
+        // Append entry value to last tuple in tuples
+        return Object.assign([], tuples, {
+          [tuples.length - 1]: tuples[tuples.length - 1].concat(entry.value)
+        })
+      }
+      // It's not last entry, just create a new tuple for the day
+      if (entryIndex < entries.length - 1) {
+        return tuples.concat([[entry.value]])
+      }
+      // It's the last entry and it's 'open', so find the 'close' in the next day
+      return tuples.concat([[entry.value, nextDay[0].value]])
+    }, [])
+  }
+
   fetch(placeId) {
     return Api.getPlace(placeId)
   }
@@ -61,30 +81,10 @@ class PlaceModel {
       const nextDay = rawOpeningHours[nextDayName]
       return {
         label,
-        openingHours: parseHours(day, nextDay)
+        openingHours: PlaceModel.parseHours(day, nextDay)
       }
     })
   }
-}
-
-function parseHours(day, nextDay) {
-  return day.reduce((tuples, entry, entryIndex, entries) => {
-    if (entry.type === 'close') {
-      if (entryIndex === 0) {
-        return tuples
-      }
-      // Append entry value to last tuple in tuples
-      return Object.assign([], tuples, {
-        [tuples.length - 1]: tuples[tuples.length - 1].concat(entry.value)
-      })
-    }
-    // It's not last entry, just create a new tuple for the day
-    if (entryIndex < entries.length - 1) {
-      return tuples.concat([[entry.value]])
-    }
-    // It's the last entry and it's 'open', so find the 'close' in the next day
-    return tuples.concat([[entry.value, nextDay[0].value]])
-  }, [])
 }
 
 export default PlaceModel
