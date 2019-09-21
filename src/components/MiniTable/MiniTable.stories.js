@@ -11,30 +11,22 @@ const data = [
   {
     label: 'Decorated value',
     value: 'foo',
-    valueDecorator() {
-      return <span>**</span>
-    }
+    valueDecorator: <span>**</span>
   },
   {
     label: 'Decorated label',
-    labelDecorator() {
-      return <span>**</span>
-    },
+    labelDecorator: <span>**</span>,
     value: 'bar'
   },
   {
     label: '',
-    labelDecorator() {
-      return <span>Only Decoration Label</span>
-    },
+    labelDecorator: <span>Only Decoration Label</span>,
     value: 'proper value'
   },
   {
     label: 'Ipsum',
     value: '',
-    valueDecorator() {
-      return <span>Only Decoration value</span>
-    }
+    valueDecorator: <span>Only Decoration value</span>
   },
   {
     label: '',
