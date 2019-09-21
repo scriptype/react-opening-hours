@@ -16,7 +16,7 @@
     "start:api": "nodemon api",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:e2e": "echo 'nightwatch will be back soon'",
+    "test:e2e": "nightwatch",
     "eject": "react-scripts eject",
     "lint": "eslint src",
     "serve": "http-server build -p 3000",
