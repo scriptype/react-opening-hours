@@ -15,11 +15,11 @@ function MiniTable({ title, data = [], modifiers = {} }) {
       <tbody>
         {data.map((row, index) => (
           <tr key={index} className={css.row}>
-            <td className={`${css.cell} ${css.labelCell}`}>
-              {row.label} {row.labelDecorator && <row.labelDecorator />}
+            <td className={`${css.cell} ${css['label-cell']}`}>
+              {row.label} {row.labelDecorator}
             </td>
-            <td className={`${css.cell} ${css.valueCell}`}>
-              {row.value} {row.valueDecorator && <row.valueDecorator />}
+            <td className={`${css.cell} ${css['value-cell']}`}>
+              {row.value} {row.valueDecorator}
             </td>
           </tr>
         ))}

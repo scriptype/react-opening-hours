@@ -21,10 +21,10 @@
     font-size: 21px;
 }
 
-.labelCell {
+.label-cell {
     font-weight: 500;
 }
 
-.valueCell {
+.value-cell {
     text-align: right;
 }

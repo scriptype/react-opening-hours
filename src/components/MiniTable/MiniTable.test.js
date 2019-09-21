@@ -58,9 +58,7 @@ it('renders labelDecorator', () => {
       {
         label: 'row 2',
         value: 'is also a thing',
-        labelDecorator() {
-          return <span id={decoId}>deco</span>
-        }
+        labelDecorator: <span id={decoId}>deco</span>
       },
       {
         label: 'row 3',
@@ -91,9 +89,7 @@ it('renders valueDecorator', () => {
       {
         label: 'row 3',
         value: 'is yet another thing',
-        valueDecorator() {
-          return <span id={decoId}>deco</span>
-        }
+        valueDecorator: <span id={decoId}>deco</span>
       }
     ]
   }
