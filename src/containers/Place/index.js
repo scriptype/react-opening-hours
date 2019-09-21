@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Center from '../../components/Center'
 import OpeningHours from './OpeningHours'
 import PlaceModel from './model'
 
@@ -13,7 +14,11 @@ function Place({ placeId }) {
     })
   }, [placeId])
 
-  return <OpeningHours data={place.openingHours} />
+  return (
+    <Center>
+      <OpeningHours data={place.openingHours} />
+    </Center>
+  )
 }
 
 export default Place

@@ -1,5 +1,4 @@
 import React from 'react'
-import Center from './components/Center'
 import Place from './containers/Place'
 
 function getRandomPlaceId() {
@@ -7,11 +6,7 @@ function getRandomPlaceId() {
 }
 
 function App() {
-  return (
-    <Center>
-      <Place placeId={getRandomPlaceId()} />
-    </Center>
-  )
+  return <Place placeId={getRandomPlaceId()} />
 }
 
 export default App
