@@ -12,7 +12,7 @@ function secondsToHours(seconds) {
   const hour = minute * 60
 
   const hours = seconds / hour
-  return hours
+  return Math.floor(hours)
 }
 
 function toTwelveHourClock(hour) {
