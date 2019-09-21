@@ -16,25 +16,32 @@ function Headline(content) {
 
 function decorateData(data) {
   return data.map(row => {
-    const decorators = {}
+    const props = {}
     if (row.labelDecorator) {
-      decorators.labelDecorator = () => (
+      props.labelDecorator = (
         <span className={css['label-decorator']}>
           {row.labelDecorator}
         </span>
       )
     }
     if (row.valueDecorator) {
-      decorators.valueDecorator = () => (
+      props.valueDecorator = (
         <span className={css['value-decorator']}>
           {row.valueDecorator}
         </span>
       )
     }
+    if (Array.isArray(row.value)) {
+      props.value = row.value.map(value => (
+        <span key={value} className={css['multi-line-value']}>
+          {value}
+        </span>
+      ))
+    }
     return {
       label: row.label,
       value: row.value,
-      ...decorators
+      ...props
     }
   })
 }
