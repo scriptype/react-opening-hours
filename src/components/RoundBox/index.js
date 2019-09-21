@@ -1,12 +1,16 @@
 import React from 'react'
 import css from './RoundBox.module.css'
 
-function Box({ children }) {
+function RoundBox({ children, className, ...props }) {
+  const classes = [
+    css.container,
+    className
+  ]
   return (
-    <section className={css.container}>
+    <section className={classes.join(' ')} {...props}>
       {children}
     </section>
   )
 }
 
-export default Box
+export default RoundBox

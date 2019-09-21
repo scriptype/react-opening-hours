@@ -10,3 +10,7 @@ it('renders without crashing', () => {
 it('renders children', () => {
   helpers.rendersChildren(RoundBox)
 })
+
+it('passes through props', () => {
+  helpers.passesThroughProps(RoundBox)
+})
