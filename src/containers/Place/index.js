@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import TimeTable from '../../components/TimeTable'
+import OpeningHours from './OpeningHours'
 import PlaceModel from './model'
 
 const model = new PlaceModel()
@@ -13,33 +13,7 @@ function Place({ placeId }) {
     })
   }, [placeId])
 
-  console.log({ place })
-
-  let openingHours
-  if (place.openingHours) {
-    openingHours = place.openingHours.map(day => {
-      const value = day.openingHours.map(h => h.join(' - ')).join(', ')
-      const valueDecorator = value ? '' : 'Closed'
-      return {
-        label: day.label,
-        value,
-        valueDecorator
-      }
-    })
-  } else {
-    openingHours = [
-      { label: 'Monday', valueDecorator: 'Closed' },
-      { label: 'Tuesday', valueDecorator: 'Closed' },
-      { label: 'Wednesday', valueDecorator: 'Closed' },
-      { label: 'Thursday', valueDecorator: 'Closed' },
-      { label: 'Friday', valueDecorator: 'Closed' },
-      { label: 'Saturday', valueDecorator: 'Closed' },
-      { label: 'Sunday', valueDecorator: 'Closed' }
-    ]
-  }
-
-
-  return <TimeTable title="Opening hours" data={openingHours} />
+  return <OpeningHours data={place.openingHours} />
 }
 
 export default Place
