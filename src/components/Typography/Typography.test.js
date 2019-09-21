@@ -4,102 +4,92 @@ import { H1, H2, H3, H4, P } from '.'
 
 const helpers = createTestHelpers(expect, it, document)
 
-/* ===
- * H1
- * == */
+describe('H1', () => {
+  it('renders without crashing', () => {
+    helpers.rendersWithoutCrashing(H1)
+  })
 
-it('H1 renders without crashing', () => {
-  helpers.rendersWithoutCrashing(H1)
+  it('renders children', () => {
+    helpers.rendersChildren(H1)
+  })
+
+  it('passes through props', () => {
+    helpers.passesThroughProps(H1)
+  })
+
+  it('has dark mode', () => {
+    helpers.hasDarkMode(H1, `${css.h1}.${css.dark}`)
+  })
 })
 
-it('H1 renders children', () => {
-  helpers.rendersChildren(H1)
+describe('H2', () => {
+  it('renders without crashing', () => {
+    helpers.rendersWithoutCrashing(H2)
+  })
+
+  it('renders children', () => {
+    helpers.rendersChildren(H2)
+  })
+
+  it('passes through props', () => {
+    helpers.passesThroughProps(H2)
+  })
+
+  it('has dark mode', () => {
+    helpers.hasDarkMode(H2, `${css.h2}.${css.dark}`)
+  })
 })
 
-it('H1 passes through props', () => {
-  helpers.passesThroughProps(H1)
+describe('H3', () => {
+  it('renders without crashing', () => {
+    helpers.rendersWithoutCrashing(H3)
+  })
+
+  it('renders children', () => {
+    helpers.rendersChildren(H3)
+  })
+
+  it('passes through props', () => {
+    helpers.passesThroughProps(H3)
+  })
+
+  it('has dark mode', () => {
+    helpers.hasDarkMode(H3, `${css.h3}.${css.dark}`)
+  })
 })
 
-it('H1 has dark mode', () => {
-  helpers.hasDarkMode(H1, `${css.h1}.${css.dark}`)
+describe('H4', () => {
+  it('renders without crashing', () => {
+    helpers.rendersWithoutCrashing(H4)
+  })
+
+  it('renders children', () => {
+    helpers.rendersChildren(H4)
+  })
+
+  it('passes through props', () => {
+    helpers.passesThroughProps(H4)
+  })
+
+  it('has dark mode', () => {
+    helpers.hasDarkMode(H4, `${css.h4}.${css.dark}`)
+  })
 })
 
-/*
- * H2
- * */
+describe('P', () => {
+  it('renders without crashing', () => {
+    helpers.rendersWithoutCrashing(P)
+  })
 
-it('H2 renders without crashing', () => {
-  helpers.rendersWithoutCrashing(H2)
-})
+  it('renders children', () => {
+    helpers.rendersChildren(P)
+  })
 
-it('H2 renders children', () => {
-  helpers.rendersChildren(H2)
-})
+  it('passes through props', () => {
+    helpers.passesThroughProps(P)
+  })
 
-it('H2 passes through props', () => {
-  helpers.passesThroughProps(H2)
-})
-
-it('H2 has dark mode', () => {
-  helpers.hasDarkMode(H2, `${css.h2}.${css.dark}`)
-})
-
-/*
- * H3
- * */
-
-it('H3 renders without crashing', () => {
-  helpers.rendersWithoutCrashing(H3)
-})
-
-it('H3 renders children', () => {
-  helpers.rendersChildren(H3)
-})
-
-it('H3 passes through props', () => {
-  helpers.passesThroughProps(H3)
-})
-
-it('H3 has dark mode', () => {
-  helpers.hasDarkMode(H3, `${css.h3}.${css.dark}`)
-})
-
-/*
- * H4
- * */
-
-it('H4 renders without crashing', () => {
-  helpers.rendersWithoutCrashing(H4)
-})
-
-it('H4 renders children', () => {
-  helpers.rendersChildren(H4)
-})
-
-it('H4 passes through props', () => {
-  helpers.passesThroughProps(H4)
-})
-
-it('H4 has dark mode', () => {
-  helpers.hasDarkMode(H4, `${css.h4}.${css.dark}`)
-})
-
-/*
- * P
- * */
-
-it('P renders without crashing', () => {
-  helpers.rendersWithoutCrashing(P)
-})
-
-it('P renders children', () => {
-  helpers.rendersChildren(P)
-})
-
-it('P passes through props', () => {
-  helpers.passesThroughProps(P)
-})
-
-it('P has dark mode', () => {
-  helpers.hasDarkMode(P, `${css.p}.${css.dark}`)
+  it('has dark mode', () => {
+    helpers.hasDarkMode(P, `${css.p}.${css.dark}`)
+  })
 })
