@@ -40,11 +40,18 @@ function OpeningHours({ data = [] }) {
     ? formattedOpeningHours
     : createEmptyOpeningHours()
 
+  const modifiers = {}
+
+  if (!data.length) {
+    modifiers.isAnimated = false
+  }
+
   return (
     <TimeTable
       id="opening-hours-table"
       title="Opening hours"
-      data={openingHours} />
+      data={openingHours}
+      modifiers={modifiers} />
   )
 }
 

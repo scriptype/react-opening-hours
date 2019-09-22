@@ -6,6 +6,23 @@
     width: 100%;
 }
 
+.table.is-animated .animatable {
+    opacity: 0;
+    animation: appear .75s calc(var(--row-index) * 30ms) forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-12.5%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .caption {
     text-align: left;
     border-bottom: 2px solid var(--color-grey-4);
