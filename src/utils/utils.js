@@ -2,8 +2,18 @@ function capitalize(string) {
   return string[0].toUpperCase() + string.slice(1)
 }
 
+function normalizedDayIndex(dayIndex) {
+  // Make sunday the first day
+  if (dayIndex === 6) {
+    return 0
+  }
+  // Move other days one right
+  return dayIndex + 1
+}
+
 function isToday(dayIndex) {
-  return dayIndex === new Date().getDay() - 1
+  const dayNumber = new Date().getDay()
+  return normalizedDayIndex(dayIndex) === dayNumber
 }
 
 function secondsToHours(seconds) {
@@ -27,6 +37,7 @@ function times(howMany, toWhat) {
 
 export {
   capitalize,
+  normalizedDayIndex,
   isToday,
   secondsToHours,
   toTwelveHourClock,

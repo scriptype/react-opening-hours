@@ -1,5 +1,6 @@
 import {
   capitalize,
+  normalizedDayIndex,
   isToday,
   secondsToHours,
   toTwelveHourClock,
@@ -16,16 +17,84 @@ describe('utils.capitalize', () => {
   })
 })
 
-describe('utils.isToday', () => {
-  it('should return true if given dayIndex today\'s index', () => {
-    // date.getDay() returns number starting from 1, so subtract 1
-    const todayIndex = new Date().getDay() - 1
-    expect(isToday(todayIndex)).toBe(true)
+describe('utils.normalizedDayIndex', () => {
+  const days = [
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+    'sunday'
+  ]
+
+  it('should return 0 for sunday', () => {
+    const sundayIndex = days.indexOf('sunday')
+    expect(normalizedDayIndex(sundayIndex)).toBe(0)
   })
 
+  it('should return +1 for all other days', () => {
+    const daysExceptSunday = days.filter(day => day !== 'sunday')
+    daysExceptSunday.forEach((day, index) => {
+      expect(normalizedDayIndex(index)).toBe(index + 1)
+    })
+  })
+})
+
+describe('utils.isToday', () => {
   it('should return true if given dayIndex today\'s index', () => {
-    const notTodayIndex = new Date().getDay() + 1
-    expect(isToday(notTodayIndex)).toBe(false)
+    function mockToday(todayDate, todayIndex) {
+      const OldDate = window.Date
+      window.Date = function Date() {
+        return new OldDate(todayDate)
+      }
+      expect(isToday(todayIndex)).toBe(true)
+      window.Date = OldDate
+    }
+
+    const days = [
+      'monday',
+      'tuesday',
+      'wednesday',
+      'thursday',
+      'friday',
+      'saturday',
+      'sunday'
+    ]
+
+    days.forEach((day, index) => {
+      // 01.03.2000 is a monday
+      mockToday(`01.0${3 + index}.2000`, index)
+    })
+  })
+
+  it('should return false if given dayIndex is not today\'s index', () => {
+    function mockNotToday(notTodayDate, notTodayIndex) {
+      const OldDate = window.Date
+      window.Date = function Date() {
+        return new OldDate(notTodayDate)
+      }
+      expect(isToday(notTodayIndex)).toBe(false)
+      window.Date = OldDate
+    }
+
+    const days = [
+      'monday',
+      'tuesday',
+      'wednesday',
+      'thursday',
+      'friday',
+      'saturday',
+      'sunday'
+    ]
+
+    days.forEach((day, index) => {
+      // 01.04.2000 is a wednesday
+      mockNotToday(`01.0${5 + index}.2000`, index)
+
+      // 01.02.2000 is a sunday
+      mockNotToday(`01.0${2 + index}.2000`, index)
+    })
   })
 })
 
