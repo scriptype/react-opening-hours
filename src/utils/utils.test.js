@@ -2,7 +2,7 @@ import {
   capitalize,
   normalizedDayIndex,
   isToday,
-  secondsToHours,
+  parseSeconds,
   toTwelveHourClock,
   times
 } from './utils'
@@ -98,38 +98,89 @@ describe('utils.isToday', () => {
   })
 })
 
-describe('utils.secondsToHours', () => {
-  it('should convert given number as seconds to hours', () => {
-    const conversions = {
-      3600: 1,
-      7200: 2
-    }
-    Object.keys(conversions).forEach(seconds => {
-      expect(secondsToHours(seconds)).toBe(conversions[seconds])
+describe('utils.parseSeconds', () => {
+  it('should convert given number as seconds to hours and minutes', () => {
+    const conversions = [
+      {
+        input: 3600,
+        output: { hours: 1, minutes: 0 }
+      },
+      {
+        input: 7200,
+        output: { hours: 2, minutes: 0 }
+      },
+      {
+        input: 5400,
+        output: { hours: 1, minutes: 30 }
+      },
+      {
+        input: 7500,
+        output: { hours: 2, minutes: 5 }
+      }
+    ]
+    conversions.forEach(({ input, output }) => {
+      expect(parseSeconds(input).hours).toBe(output.hours)
+      expect(parseSeconds(input).minutes).toBe(output.minutes)
     })
   })
 
-  it('should floor the resulting hour', () => {
+  it('should floor the resulting hour and minute', () => {
     const conversions = {
       3650: 1,
       7300: 2
     }
     Object.keys(conversions).forEach(seconds => {
-      expect(secondsToHours(seconds)).toBe(conversions[seconds])
+      expect(parseSeconds(seconds).hours).toBe(conversions[seconds])
     })
   })
 })
 
 describe('utils.toTwelveHourClock', () => {
   it('should convert given hour to AM/PM', () => {
-    const conversions = {
-      0: '12 AM',
-      3: '3 AM',
-      12: '12 PM',
-      18: '6 PM'
-    }
-    Object.keys(conversions).forEach(hour => {
-      expect(toTwelveHourClock(hour)).toBe(conversions[hour])
+    const conversions = [
+      {
+        input: { hours: 0, minutes: 0 },
+        output: '12 AM'
+      },
+      {
+        input: { hours: 3, minutes: 0 },
+        output: '3 AM'
+      },
+      {
+        input: { hours: 12, minutes: 0 },
+        output: '12 PM'
+      },
+      {
+        input: { hours: 18, minutes: 0 },
+        output: '6 PM'
+      }
+    ]
+    conversions.forEach(({ input, output }) => {
+      expect(toTwelveHourClock(input)).toBe(output)
+    })
+  })
+
+  it('should work properly with minutes', () => {
+    const conversions = [
+      {
+        input: { hours: 0, minutes: 30 },
+        output: '12:30 AM'
+      },
+      {
+        input: { hours: 3, minutes: 3 },
+        output: '3:03 AM'
+      },
+      {
+        input: { hours: 12, minutes: 59 },
+        output: '12:59 PM'
+      },
+      {
+        input: { hours: 18, minutes: 0 },
+        output: '6 PM'
+      }
+    ]
+    conversions.forEach(({ input, output }) => {
+      expect(toTwelveHourClock(input)).toBe(output)
     })
   })
 })

@@ -117,8 +117,8 @@ const collection = [
     thursday: [
       { type: 'open', value: 32400 },
       { type: 'close', value: 43200 },
-      { type: 'open', value: 50400 },
-      { type: 'close', value: 64800 }
+      { type: 'open', value: 52200 },
+      { type: 'close', value: 65100 }
     ],
     friday: [
       { type: 'open', value: 72000 }

@@ -12,7 +12,7 @@ import { SkeletonText } from '../../components/Skeleton'
 import {
   capitalize,
   isToday,
-  secondsToHours,
+  parseSeconds,
   toTwelveHourClock,
   times
 } from '../../utils/utils'
@@ -30,7 +30,7 @@ function OpeningHours({ data = [] }) {
   const formattedOpeningHours = data.map((day, index) => {
     const values = day.openingHours.map(hours => {
       return hours
-        .map(secondsToHours)
+        .map(parseSeconds)
         .map(toTwelveHourClock)
         .join(' - ')
     })

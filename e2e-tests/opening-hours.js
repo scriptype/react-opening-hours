@@ -22,7 +22,7 @@ module.exports = {
 
     expectRow(4).text.to.contain('Thursday')
     expectRow(4).text.to.contain('9 AM - 12 PM')
-    expectRow(4).text.to.contain('2 PM - 6 PM')
+    expectRow(4).text.to.contain('2:30 PM - 6:05 PM')
 
     expectRow(5).text.to.contain('Friday')
     expectRow(5).text.to.contain('8 PM - 3 AM')
