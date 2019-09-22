@@ -6,7 +6,11 @@ function getRandomPlaceId() {
 }
 
 function getPlaceId() {
-  return document.location.hash.slice(1) || getRandomPlaceId()
+  const hash = document.location.hash
+  if (hash) {
+    return Number(hash.slice(1))
+  }
+  return getRandomPlaceId()
 }
 
 function App() {
