@@ -2,7 +2,7 @@
 
 ![Travis Badge](https://api.travis-ci.org/scriptype/react-opening-hours.svg)
 
-This project is built with CRA boilerplate.
+This project is built with [`create-react-app`](https://create-react-app.dev).
 
 ## Usage
 
@@ -58,3 +58,16 @@ For e2e tests, run:
 ```sh
 yarn test:e2e
 ```
+
+## Production build
+
+Running the following command should generate an optimized build in `build` folder:
+
+```sh
+yarn build
+```
+
+## Further documentation
+
+[CRA's docs](https://create-react-app.dev/docs/documentation-intro)
+can be consulted for additional details.
