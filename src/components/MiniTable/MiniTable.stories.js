@@ -60,3 +60,14 @@ export const liquidLayout = () => {
     </Center>
   )
 }
+
+export const nonAnimated = () => {
+  const modifiers = {
+    isAnimated: false
+  }
+  return (
+    <Center>
+      <MiniTable title="Liquid Table" data={data} modifiers={modifiers} />
+    </Center>
+  )
+}
