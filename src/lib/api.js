@@ -1,9 +1,15 @@
-const API_BASE_URL = 'http://localhost:3001'
+const { hostname } = window.location
+const API_BASE_URL = `http://${hostname}:3001`
 
 const Api = {
   async getJSON(endpoint) {
-    const res = await fetch(`${API_BASE_URL}${endpoint}`)
-    return res.json()
+    try {
+      const res = await fetch(`${API_BASE_URL}${endpoint}`)
+      return res.json()
+    } catch (error) {
+      console.error(error)
+      throw error
+    }
   },
 
   getPlace(placeId) {
