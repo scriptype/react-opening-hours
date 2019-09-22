@@ -1,4 +1,12 @@
 import React from 'react'
+import {
+  string,
+  number,
+  arrayOf,
+  shape,
+  oneOfType,
+  element
+} from 'prop-types'
 import TimeTable from '../../components/TimeTable'
 import { SkeletonText } from '../../components/Skeleton'
 import {
@@ -26,8 +34,8 @@ function OpeningHours({ data = [] }) {
         .map(toTwelveHourClock)
         .join(' - ')
     })
-    const valueDecorator = !values.length && 'Closed'
-    const labelDecorator = isToday(index) && 'today'
+    const valueDecorator = values.length ? '' : 'Closed'
+    const labelDecorator = isToday(index) ? 'today' : ''
     return {
       label: capitalize(day.label),
       labelDecorator,
@@ -52,6 +60,17 @@ function OpeningHours({ data = [] }) {
       title="Opening hours"
       data={openingHours}
       modifiers={modifiers} />
+  )
+}
+
+OpeningHours.propTypes = {
+  data: arrayOf(
+    shape({
+      label: oneOfType([string, number, element]),
+      value: oneOfType([string, number, element]),
+      labelDecorator: oneOfType([string, element]),
+      valueDecorator: oneOfType([string, element])
+    })
   )
 }
 

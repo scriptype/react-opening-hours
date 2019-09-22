@@ -1,4 +1,13 @@
 import React from 'react'
+import {
+  string,
+  number,
+  arrayOf,
+  bool,
+  shape,
+  oneOfType,
+  element
+} from 'prop-types'
 import css from './MiniTable.module.css'
 
 function MiniTable({ id, title, data = [], modifiers = {} }) {
@@ -32,6 +41,28 @@ function MiniTable({ id, title, data = [], modifiers = {} }) {
       </tbody>
     </table>
   )
+}
+
+MiniTable.propTypes = {
+  id: string,
+  title: oneOfType([string, element]),
+  data: arrayOf(
+    shape({
+      label: oneOfType([string, number, element]),
+      value: oneOfType([
+        string,
+        number,
+        element,
+        arrayOf(oneOfType([string, number, element]))
+      ]),
+      labelDecorator: oneOfType([string, element]),
+      valueDecorator: oneOfType([string, element])
+    })
+  ),
+  modifiers: shape({
+    isLiquid: bool,
+    isAnimated: bool
+  })
 }
 
 export default MiniTable

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { number } from 'prop-types'
 import Center from '../../components/Center'
 import OpeningHours from './OpeningHours'
 import PlaceModel from './model'
@@ -19,6 +20,10 @@ function Place({ placeId }) {
       <OpeningHours data={place.openingHours} />
     </Center>
   )
+}
+
+Place.propTypes = {
+  placeId: number
 }
 
 export default Place

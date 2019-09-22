@@ -1,4 +1,13 @@
 import React from 'react'
+import {
+  string,
+  number,
+  arrayOf,
+  bool,
+  shape,
+  oneOfType,
+  element
+} from 'prop-types'
 import RoundBox from '../RoundBox'
 import MiniTable from '../MiniTable'
 import { H1 } from '../Typography'
@@ -61,6 +70,28 @@ function TimeTable({ id, title, data = [], modifiers = {} }) {
         modifiers={Object.assign({}, defaultModifiers, modifiers)} />
     </RoundBox>
   )
+}
+
+TimeTable.propTypes = {
+  id: string,
+  title: oneOfType([string, element]),
+  data: arrayOf(
+    shape({
+      label: oneOfType([string, number, element]),
+      value: oneOfType([
+        string,
+        number,
+        element,
+        arrayOf(oneOfType([string, number, element]))
+      ]),
+      labelDecorator: oneOfType([string, element]),
+      valueDecorator: oneOfType([string, element])
+    })
+  ),
+  modifiers: shape({
+    isLiquid: bool,
+    isAnimated: bool
+  })
 }
 
 export default TimeTable

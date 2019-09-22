@@ -1,4 +1,5 @@
 import React from 'react'
+import { string, bool } from 'prop-types'
 import css from './Typography.module.css'
 
 function H1({ children, className = '', dark, ...restProps }) {
@@ -13,6 +14,11 @@ function H1({ children, className = '', dark, ...restProps }) {
   )
 }
 
+H1.propTypes = {
+  className: string,
+  dark: bool
+}
+
 function H2({ children, className = '', dark, ...restProps }) {
   const classNames = [css.h2, className]
   if (dark) {
@@ -23,6 +29,11 @@ function H2({ children, className = '', dark, ...restProps }) {
       {children}
     </h2>
   )
+}
+
+H2.propTypes = {
+  className: string,
+  dark: bool
 }
 
 function H3({ children, className = '', dark, ...restProps }) {
@@ -37,6 +48,11 @@ function H3({ children, className = '', dark, ...restProps }) {
   )
 }
 
+H3.propTypes = {
+  className: string,
+  dark: bool
+}
+
 function H4({ children, className = '', dark, ...restProps }) {
   const classNames = [css.h4, className]
   if (dark) {
@@ -49,6 +65,11 @@ function H4({ children, className = '', dark, ...restProps }) {
   )
 }
 
+H4.propTypes = {
+  className: string,
+  dark: bool
+}
+
 function P({ children, className = '', dark, ...restProps }) {
   const classNames = [css.p, className]
   if (dark) {
@@ -59,6 +80,11 @@ function P({ children, className = '', dark, ...restProps }) {
       {children}
     </p>
   )
+}
+
+P.propTypes = {
+  className: string,
+  dark: bool
 }
 
 export {

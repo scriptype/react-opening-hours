@@ -1,4 +1,5 @@
 import React from 'react'
+import { string } from 'prop-types'
 import css from './RoundBox.module.css'
 
 function RoundBox({ children, className, ...props }) {
@@ -11,6 +12,10 @@ function RoundBox({ children, className, ...props }) {
       {children}
     </section>
   )
+}
+
+RoundBox.propTypes = {
+  className: string
 }
 
 export default RoundBox

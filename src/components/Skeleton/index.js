@@ -1,4 +1,5 @@
 import React from 'react'
+import { number } from 'prop-types'
 import css from './Skeleton.module.css'
 
 function SkeletonText({ length = 10, ...props }) {
@@ -8,6 +9,10 @@ function SkeletonText({ length = 10, ...props }) {
       {content}
     </span>
   )
+}
+
+SkeletonText.propTypes = {
+  length: number
 }
 
 export {
