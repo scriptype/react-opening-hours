@@ -1,6 +1,6 @@
 # React Opening Hours
 
-![Travis Badge](https://api.travis-ci.org/scriptype/react-opening-hours.svg)
+[![Travis Badge](https://api.travis-ci.org/scriptype/react-opening-hours.svg)](https://travis-ci.org/scriptype/react-opening-hours)
 
 This project is built with [`create-react-app`](https://create-react-app.dev).
 
