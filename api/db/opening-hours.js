@@ -109,12 +109,12 @@ const collection = [
       { type: 'open', value: 32400 },
       { type: 'close', value: 64800 }
     ],
-    tuesday: [
-      { type: 'open', value: 32400 },
-      { type: 'close', value: 64800 }
+    tuesday: [],
+    wednesday: [
+      { type: 'open', value: 32400 }
     ],
-    wednesday: [],
     thursday: [
+      { type: 'close', value: 3600 },
       { type: 'open', value: 32400 },
       { type: 'close', value: 43200 },
       { type: 'open', value: 52200 },

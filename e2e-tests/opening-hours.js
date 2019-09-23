@@ -15,10 +15,10 @@ module.exports = {
     expectRow(1).text.to.contain('9 AM - 6 PM')
 
     expectRow(2).text.to.contain('Tuesday')
-    expectRow(2).text.to.contain('9 AM - 6 PM')
+    expectRow(2).text.to.contain('Closed')
 
     expectRow(3).text.to.contain('Wednesday')
-    expectRow(3).text.to.contain('Closed')
+    expectRow(3).text.to.contain('9 AM - 1 AM')
 
     expectRow(4).text.to.contain('Thursday')
     expectRow(4).text.to.contain('9 AM - 12 PM')
