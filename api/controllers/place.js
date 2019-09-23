@@ -10,7 +10,7 @@ placeController.get('/', (req, res) => {
 placeController.get('/:placeId', (req, res) => {
   const { placeId } = req.params
   const formattedPlaceId = Number(placeId)
-  if (!formattedPlaceId) {
+  if (Number.isNaN(formattedPlaceId)) {
     return res.status(400).json({ error: 'Incorrect type for place id' })
   }
   const place = mockPlaceData(formattedPlaceId)
