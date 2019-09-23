@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  string,
-  number,
-  arrayOf,
-  shape,
-  oneOfType,
-  element
-} from 'prop-types'
+import { string, number, arrayOf, exact } from 'prop-types'
 import TimeTable from '../../components/TimeTable'
 import { SkeletonText } from '../../components/Skeleton'
 import {
@@ -28,8 +21,8 @@ function createEmptyOpeningHours() {
 
 function OpeningHours({ data = [] }) {
   const formattedOpeningHours = data.map((day, index) => {
-    const values = day.openingHours.map(hours => {
-      return hours
+    const values = day.openingHours.map(seconds => {
+      return seconds
         .map(parseSeconds)
         .map(toTwelveHourClock)
         .join(' - ')
@@ -65,11 +58,9 @@ function OpeningHours({ data = [] }) {
 
 OpeningHours.propTypes = {
   data: arrayOf(
-    shape({
-      label: oneOfType([string, number, element]),
-      value: oneOfType([string, number, element]),
-      labelDecorator: oneOfType([string, element]),
-      valueDecorator: oneOfType([string, element])
+    exact({
+      label: string,
+      openingHours: arrayOf(arrayOf(number))
     })
   )
 }
