@@ -7,7 +7,7 @@ This project is built with [`create-react-app`](https://create-react-app.dev).
 ## Usage
 
 There are 5 different opening hours data examples in the mock data of api. And
-the page will randomly pick one of them on each refresh.
+randomly one of them will be shown on each refresh.
 
 To retrieve a certain opening hours data every time, a hash can be added to the
 end of page url (e.g. #0). This works until #4, and after that, any number will
