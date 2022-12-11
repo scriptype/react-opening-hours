@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "helmet": "^3.21.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
