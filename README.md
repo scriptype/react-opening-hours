@@ -2,6 +2,12 @@
 
 [![Travis Badge](https://api.travis-ci.org/scriptype/react-opening-hours.svg)](https://travis-ci.org/scriptype/react-opening-hours)
 
+## How it looks
+
+https://user-images.githubusercontent.com/5516876/208334826-96f12b89-e877-4960-9161-bc310c495f41.mov
+
+## Tech
+
 This project is built with [`create-react-app`](https://create-react-app.dev).
 
 ## Usage
